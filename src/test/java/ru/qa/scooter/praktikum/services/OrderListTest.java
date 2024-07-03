@@ -12,6 +12,8 @@ import static org.junit.Assert.assertEquals;
 public class OrderListTest {
     private OrderApi orderApi;
 
+    private static final int DEFAULT_LIMIT_ORDER_LIST_SIZE = 30;
+
     @Before
     public void setUp() {
         orderApi = new OrderApi();
@@ -30,6 +32,6 @@ public class OrderListTest {
                 .extract().jsonPath()
                 .getList("orders").size();
 
-        assertEquals(30, actualOrdersListSize);
+        assertEquals(DEFAULT_LIMIT_ORDER_LIST_SIZE, actualOrdersListSize);
     }
 }
